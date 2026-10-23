@@ -48,9 +48,6 @@ O diagrama abaixo ilustra o ciclo de vida completo de uma requisição e a integ
 jungle-app/
 ├── public/
 │   └── mockServiceWorker.js         # Service Worker oficial do MSW v2
-├── docs/
-│   ├── DESIGN_TOKENS.md             # Especificação de cores, tipografia e raios (Figma Ff0SksUi7UFtPWUO8kyNtw)
-│   └── SPEC.md                      # Especificação inicial de requisitos e critérios
 ├── tests/
 │   ├── e2e/                         # Suíte Playwright nos viewports 390px, 768px e 1440px
 │   │   ├── marketplace.spec.ts      # Catálogo, busca, filtros combinados e paginação
