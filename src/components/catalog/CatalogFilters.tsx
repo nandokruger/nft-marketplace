@@ -158,9 +158,9 @@ export function CatalogFilters({
             <Button
               type="button"
               variant="default"
-              size="sm"
+              size="default"
               onClick={applyPrice}
-              className="w-fit px-3 py-2 h-auto rounded-[6px] font-bold text-base text-ink bg-primary hover:bg-[#c27c3e] cursor-pointer shadow-none"
+              className="w-fit px-3 py-2 h-auto rounded-[6px] font-bold  text-ink bg-primary hover:bg-[#c27c3e] cursor-pointer shadow-none"
             >
               Aplicar
             </Button>

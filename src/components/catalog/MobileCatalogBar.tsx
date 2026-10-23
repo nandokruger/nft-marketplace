@@ -138,7 +138,7 @@ export function MobileCatalogBar({
               <Button
                 type="button"
                 variant="outline"
-                size="sm"
+                size="default"
                 onClick={handleClearAll}
                 className="rounded-[6px] border-border text-foreground hover:bg-surface-card"
               >
@@ -149,8 +149,8 @@ export function MobileCatalogBar({
               <Button
                 type="button"
                 variant="default"
-                size="sm"
-                className="flex-1 rounded-[6px] bg-primary text-ink font-bold hover:bg-[#c27c3e]"
+                size="default"
+                className="flex-1  rounded-[6px] bg-primary text-ink font-bold hover:bg-[#c27c3e]"
               >
                 {typeof totalResults === 'number'
                   ? `Ver ${totalResults} resultados`
