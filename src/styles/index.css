@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: 'Roboto Mono', monospace;
+  --font-sans: 'Roboto Mono', monospace;
+
+  /* Design Tokens */
+  --color-ink: #140D0A;
+  --color-surface-card: #241612;
+  --color-surface-dark: #38220F;
+  --color-border: #3F2319;
+  --color-border-soft: #55321F;
+  --color-primary: #D28A4C;
+  --color-secondary: #B39463;
+  --color-foreground: #F5F1EB;
+  --color-text-secondary: #CFB28C;
+  --color-text-accent: #E89B55;
+  --color-text-coral: #F0805F;
+
+  /* Radii Tokens */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-input: 5px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 15px;
+  --radius-2xl: 22px;
+  --radius-pill: 37px;
+}
+
+:root {
+  --background: #140D0A;
+  --foreground: #F5F1EB;
+  --card: #241612;
+  --card-foreground: #F5F1EB;
+  --popover: #38220F;
+  --popover-foreground: #F5F1EB;
+  --primary: #D28A4C;
+  --primary-foreground: #140D0A;
+  --secondary: #B39463;
+  --secondary-foreground: #140D0A;
+  --muted: #241612;
+  --muted-foreground: #CFB28C;
+  --accent: #E89B55;
+  --accent-foreground: #140D0A;
+  --destructive: #F0805F;
+  --destructive-foreground: #140D0A;
+  --border: #3F2319;
+  --input: #3F2319;
+  --ring: #D28A4C;
+  --radius: 6px;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-foreground);
+  font-family: var(--font-mono);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar adhering to dark palette */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #140D0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3F2319;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #55321F;
+}
+
+/* Zero CLS Shimmer Skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg,
+      #241612 0%,
+      #38220F 50%,
+      #241612 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer {
+    animation: none;
+    background: #241612;
+  }
+}

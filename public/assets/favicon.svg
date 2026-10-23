@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#140D0A" />
+  <path d="M7 8.5C7 7.67157 7.67157 7 8.5 7H11.5C12.3284 7 13 7.67157 13 8.5V23.5C13 24.3284 12.3284 25 11.5 25H8.5C7.67157 25 7 24.3284 7 23.5V8.5Z" fill="#FA5D00" />
+  <path d="M14 16.5L21.5 8.2C22.1 7.5 23.2 7.7 23.5 8.6L24.8 12.2C25.1 12.9 24.8 13.8 24.1 14.3L18.8 18L24.5 22.8C25.2 23.4 25.1 24.5 24.3 25L21.8 26.5C21.1 26.9 20.3 26.7 19.8 26.1L14 18.5V16.5Z" fill="url(#kurio_grad)" />
+  <defs>
+    <linearGradient id="kurio_grad" x1="14" y1="7" x2="25" y2="27" gradientUnits="userSpaceOnUse">
+      <stop stopColor="#FA5D00" />
+      <stop offset="1" stopColor="#E29450" />
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /checkout
+Disallow: /orders/
+Disallow: /profile
+Disallow: /wallets
+
+Sitemap: https://fernandokruger.com.br/projetos/nft-marketplace/sitemap.xml
