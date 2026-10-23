@@ -4,9 +4,7 @@ coverage/
 playwright-report/
 test-results/
 .lighthouseci/
-src/routeTree.gen.ts
+# src/routeTree.gen.ts
 *.log
 .env*.local
-.agents/skills/
-.agents/rules/
 docs/
