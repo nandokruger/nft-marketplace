@@ -80,21 +80,21 @@ export function MobileNftDetail({
 
       {/* Main NFT Artwork Card (rounded-[2rem], CLS = 0) */}
       <div className="px-4 w-full">
-        <div className="w-full mx-auto max-w-[500px] aspect-square rounded-[2rem] overflow-hidden bg-surface-dark shadow-2xl relative border border-border/30">
+        <div className="w-full mx-auto max-w-[500px] aspect-square lg:rounded-[2rem] rounded-t-[2rem] overflow-hidden bg-surface-dark shadow-2xl relative border border-border/30">
           <img
             src={resolveAssetUrl(nft.imageUrl)}
             alt={nft.name}
             className="w-full h-full object-cover"
             fetchPriority="high"
-            width={358}
-            height={358}
+            width={350}
+            height={350}
           />
         </div>
       </div>
 
       {/* Info & Metadata Card */}
-      <div className="mt-4 px-4 w-full">
-        <div className="w-full rounded-[2rem] bg-surface-card border border-border/40 p-5 flex flex-col gap-4 shadow-xl">
+      <div className=" w-full">
+        <div className="w-full rounded-t-[2rem] pb-18 bg-surface-card border border-border/40 p-5 flex flex-col gap-4 shadow-xl">
           {/* Title & Rating */}
           <div className="flex items-center justify-between gap-2">
             <h1 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight truncate">
@@ -160,7 +160,7 @@ export function MobileNftDetail({
       </div>
 
       {/* Sticky Bottom Action Bar */}
-      <div className="w-full  gap-3 mx-auto fixed bottom-0 bg-surface-card border-t rounded-t-[2rem] border-border/50 shadow-[0_-12px_32px_rgba(0,0,0,0.85)] px-5 pt-3.5 pb-6">
+      <div className="w-full  gap-3 mx-auto fixed bottom-0 left-0 bg-surface-card border-t rounded-t-[2rem] border-border/50 shadow-[0_-12px_32px_rgba(0,0,0,0.85)] px-5 pt-3.5 pb-6">
         <div className=" inset-x-0 z-40 max-w-[690px] mx-auto  flex flex-col gap-3 font-mono">
           {/* Top Line: Stepper + Price */}
           <div className="flex items-center justify-between">

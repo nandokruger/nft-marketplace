@@ -13,7 +13,7 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <AuthModalProvider>
-      <div className="min-h-screen flex flex-col bg-ink text-foreground selection:bg-primary selection:text-ink font-mono">
+      <div className="min-h-screen flex flex-col xl:px-0 lg:px-8 xl:px-0 bg-ink text-foreground selection:bg-primary selection:text-ink font-mono">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-ink focus:font-bold focus:rounded-md focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-foreground"

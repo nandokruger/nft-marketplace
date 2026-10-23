@@ -3,7 +3,7 @@
  * as mesmas colunas/gaps para garantir CLS = 0 na troca skeleton → conteúdo.
  */
 export const DESKTOP_GRID_CLASS =
-  'grid grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-6 justify-items-center lg:justify-items-start xl:justify-items-center';
+  'grid grid-cols-3 gap-x-6 gap-y-6 justify-items-center';
 
 export const MOBILE_GRID_CLASS =
   'grid grid-cols-2 items-start gap-x-4 gap-y-6 [&>*:nth-child(even)]:mt-8';

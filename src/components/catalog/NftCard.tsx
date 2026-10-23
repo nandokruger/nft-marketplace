@@ -151,7 +151,7 @@ export function NftCard({ nft, variant, onAddToCart, onToggleFavorite, cartPendi
           aria-label={`Ver detalhes de ${nft.name}`}
           className="block h-full w-full cursor-pointer"
         >
-          <div className="relative w-full max-w-[258px] aspect-square bg-surface-card py-4 px-1 sm:py-4 sm:px-1 flex items-center justify-center shrink-0 shadow-lg">
+          <div className="relative w-full max-w-[258px]  aspect-square bg-surface-card py-4 px-1 sm:py-4 sm:px-1 flex items-center justify-center shrink-0 shadow-lg">
             <img
               src={resolveAssetUrl(nft.imageUrl)}
               alt={nft.name}

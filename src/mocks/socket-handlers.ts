@@ -6,11 +6,17 @@ export type SocketIoClient = ReturnType<typeof toSocketIo>['client'];
 
 const connectedClients = new Set<SocketIoClient>();
 
-// Intercepts any WebSocket connection matching socket.io path
-export const socketLink = ws.link(/socket\.io/);
+// Intercepts any WebSocket connection (MSW removes '/socket.io/' prefix during resolution)
+export const socketLink = ws.link('*');
 
 export const socketHandlers = [
   socketLink.addEventListener('connection', (connection) => {
+    // Forward non-socket.io connections (e.g. Vite HMR) to the real server
+    if (!connection.client.url.pathname.includes('socket.io')) {
+      connection.server.connect();
+      return;
+    }
+
     const io = toSocketIo(connection);
     const client = io.client;
     connectedClients.add(client);
