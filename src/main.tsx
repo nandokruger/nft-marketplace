@@ -31,7 +31,7 @@ async function startApp() {
   await enableMocking();
 
   // Initialize Socket.IO connection and bind to QueryClient
-  initSocket(queryClient);
+  await initSocket(queryClient);
 
   const rootElement = document.getElementById('root');
   if (rootElement && !rootElement.innerHTML) {

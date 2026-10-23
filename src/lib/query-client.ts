@@ -39,7 +39,7 @@ export function wipeSessionState(qc: QueryClient = queryClient): void {
 
   // 3. Clean up and reconnect socket cleanly
   disconnectSocket();
-  initSocket(qc);
+  void initSocket(qc);
 
   // 4. Cancel active in-flight queries
   qc.cancelQueries();

@@ -1,4 +1,4 @@
-import { io, Socket } from 'socket.io-client';
+import type { Socket } from 'socket.io-client';
 import type { QueryClient } from '@tanstack/react-query';
 import {
   NftUpdatedEventSchema,
@@ -26,18 +26,24 @@ function trackEvent(eventId: string): boolean {
   return false;
 }
 
-export function initSocket(queryClient: QueryClient): Socket {
+export async function initSocket(queryClient: QueryClient): Promise<Socket | null> {
   if (socketInstance) {
     return socketInstance;
   }
 
+  const { io } = await import('socket.io-client');
   const origin = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:5173';
   socketInstance = io(origin, {
     transports: ['websocket'],
     autoConnect: true,
     reconnection: true,
-    reconnectionAttempts: 10,
-    reconnectionDelay: 1000
+    reconnectionAttempts: 5,
+    reconnectionDelay: 2000
+  });
+
+  socketInstance.on('connect_error', (err) => {
+    // Tratamento amigável para ambientes sem servidor WS real dedicado (ex: Vercel)
+    console.warn('[KURIO WebSocket] Aviso de conexão:', err.message);
   });
 
   socketInstance.on('connect', () => {
