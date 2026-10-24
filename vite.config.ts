@@ -6,7 +6,7 @@ import { tanstackRouter } from '@tanstack/router-plugin/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/nft-marketplace/',
   plugins: [
     // Deve vir antes do plugin React (gera src/routeTree.gen.ts a partir de src/routes/).
     tanstackRouter({ target: 'react', autoCodeSplitting: true }),
