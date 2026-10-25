@@ -11,9 +11,9 @@ interface HeroSlide {
 }
 
 const HERO_SLIDES: HeroSlide[] = [
-  { src: resolveAssetUrl('/assets/nfts/emerald-ape.png'), alt: 'Emerald Ape #042 — arte em destaque' },
-  { src: resolveAssetUrl('/assets/nfts/sage-nomad.png'), alt: 'Sage Nomad #009 — arte em destaque' },
-  { src: resolveAssetUrl('/assets/nfts/neon-vessel.png'), alt: 'Neon Vessel #552 — arte em destaque' }
+  { src: resolveAssetUrl('/assets/nfts/emerald-ape.webp'), alt: 'Emerald Ape #042 — arte em destaque' },
+  { src: resolveAssetUrl('/assets/nfts/sage-nomad.webp'), alt: 'Sage Nomad #009 — arte em destaque' },
+  { src: resolveAssetUrl('/assets/nfts/neon-vessel.webp'), alt: 'Neon Vessel #552 — arte em destaque' }
 ];
 
 function HeroDots({

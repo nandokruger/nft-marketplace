@@ -191,7 +191,7 @@ function HomePage() {
 
               <div className="w-full h-[368px] rounded-[22px] overflow-hidden mt-3 shadow-lg">
                 <img
-                  src={resolveAssetUrl('/assets/nfts/sage-nomad.png')}
+                  src={resolveAssetUrl('/assets/nfts/sage-nomad.webp')}
                   alt="NFT em destaque - Oferta limitada"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"

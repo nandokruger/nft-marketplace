@@ -23,7 +23,7 @@ const BLOG_POSTS: BlogPost[] = [
     summary: 'Aprenda a colecionar, negociar e verificar ativos digitais.',
     fullText:
       'A posse verificada por criptografia garante que apenas o detentor da chave privada tenha autoridade sobre a transferência e fruição de um NFT, eliminando intermediários tradicionais e abrindo precedentes para novas formas de monetização e curadoria.',
-    imageUrl: resolveAssetUrl('/assets/nfts/neon-vessel.png')
+    imageUrl: resolveAssetUrl('/assets/nfts/neon-vessel.webp')
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const BLOG_POSTS: BlogPost[] = [
     summary: 'Conheça criadores que moldam a cultura digital.',
     fullText:
       'De ilustradores generativos a escultores em 3D, uma nova geração de artistas utiliza smart contracts na Ethereum, Polygon e Solana para criar identidades visuais descentralizadas que redefinem o mercado de arte global.',
-    imageUrl: resolveAssetUrl('/assets/nfts/emerald-ape.png')
+    imageUrl: resolveAssetUrl('/assets/nfts/emerald-ape.webp')
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const BLOG_POSTS: BlogPost[] = [
     summary: 'Entenda raridade, procedência, direitos autorais e utilidade.',
     fullText:
       'Entenda como metadados armazenados em IPFS e hashes no contrato inteligente atestam a escassez matemática de coleções como Emerald Ape e Sage Nomad, garantindo autenticidade permanente.',
-    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.png')
+    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.webp')
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const BLOG_POSTS: BlogPost[] = [
     summary: 'Proteja sua carteira, seus ativos e sua identidade.',
     fullText:
       'Utilize carteiras não-custodiais, verifique assinaturas EIP-712 antes de assinar transações e mantenha frases de recuperação isoladas do ambiente conectado à rede.',
-    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.png')
+    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.webp')
   }
 ];
 
@@ -84,7 +84,7 @@ export function EditorialSections({ onExplorePromos }: EditorialSectionsProps) {
         <Card className="rounded-[8px] bg-surface-card overflow-hidden flex flex-col sm:flex-row items-center h-auto sm:h-[250px] shadow-sm group border-0">
           <div className="w-full sm:w-[280px] h-[220px] sm:h-full shrink-0 overflow-hidden">
             <img
-              src={resolveAssetUrl('/assets/nfts/emerald-ape.png')}
+              src={resolveAssetUrl('/assets/nfts/emerald-ape.webp')}
               alt="Lançamentos Gênesis"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-tr-lg rounded-br-lg"
               loading="lazy"
@@ -123,7 +123,7 @@ export function EditorialSections({ onExplorePromos }: EditorialSectionsProps) {
         <Card className="rounded-[8px] bg-surface-card overflow-hidden flex flex-col sm:flex-row items-center h-auto sm:h-[250px] shadow-sm group border-0">
           <div className="w-full sm:w-[280px] h-[220px] sm:h-full shrink-0 overflow-hidden">
             <img
-              src={resolveAssetUrl('/assets/nfts/neon-vessel.png')}
+              src={resolveAssetUrl('/assets/nfts/neon-vessel.webp')}
               alt="Arte digital selecionada"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 rounded-tr-lg rounded-br-lg"
               loading="lazy"

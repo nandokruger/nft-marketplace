@@ -30,31 +30,31 @@ const RELATED_COLLECTION_NFTS = [
     id: 'nft-04',
     name: 'Cosmic Bloom #118',
     priceEth: '1.29',
-    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.png')
+    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.webp')
   },
   {
     id: 'nft-05',
     name: 'Violet Nomad #314',
     priceEth: '1.39',
-    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.png')
+    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.webp')
   },
   {
     id: 'nft-06',
     name: 'Ivory Baron #088',
     priceEth: '1.79',
-    imageUrl: resolveAssetUrl('/assets/nfts/neon-vessel.png')
+    imageUrl: resolveAssetUrl('/assets/nfts/neon-vessel.webp')
   },
   {
     id: 'nft-07',
     name: 'Golden Beat #207',
     priceEth: '0.99',
-    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.png')
+    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.webp')
   },
   {
     id: 'nft-09',
     name: 'Golden Signal #160',
     priceEth: '0.39',
-    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.png')
+    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.webp')
   }
 ];
 
