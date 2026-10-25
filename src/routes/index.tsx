@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { createFileRoute, Link, useNavigate } from '@tanstack/react-router';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiClient } from '@/lib/axios';
@@ -58,15 +58,15 @@ function HomePage() {
     setTimeout(() => setToastNotice(null), 3000);
   };
 
-  const setFilters = (patch: CatalogFilterPatch, options?: { replace?: boolean }) => {
+  const setFilters = useCallback((patch: CatalogFilterPatch, options?: { replace?: boolean }) => {
     navigate({
       search: (prev) => compactSearch({ ...prev, ...patch, page: undefined }),
       replace: options?.replace ?? false,
       resetScroll: false
     });
-  };
+  }, [navigate]);
 
-  const setPage = (newPage: number) => {
+  const setPage = useCallback((newPage: number) => {
     navigate({
       search: (prev) => compactSearch({ ...prev, page: newPage === 1 ? undefined : newPage }),
       resetScroll: false
@@ -80,7 +80,7 @@ function HomePage() {
         behavior: 'smooth'
       });
     }
-  };
+  }, [navigate, isDesktop]);
 
   // Build filter query params sent to MSW
   const sort = effectiveSort(search);
@@ -348,7 +348,7 @@ function HomePage() {
       </section>
 
       {/* SECTION 3 & 4: PROMOS & DIÁRIO DA CUNHAGEM (Desktop only) */}
-      <EditorialSections onExplorePromos={() => setFilters({ tab: 'new' })} />
+      {isDesktop && <EditorialSections onExplorePromos={() => setFilters({ tab: 'new' })} />}
 
       {/* Floating Bottom Navigation Bar (Mobile only) */}
       <MobileBottomNav

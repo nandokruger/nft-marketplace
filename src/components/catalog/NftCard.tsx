@@ -77,7 +77,7 @@ export function NftCard({ nft, variant, onAddToCart, onToggleFavorite, cartPendi
 
   if (variant === 'mobile') {
     return (
-      <article className="flex flex-col gap-2.5" data-testid="nft-card">
+      <article className="flex flex-col gap-2.5 cv-auto" data-testid="nft-card">
         <div className="relative overflow-hidden rounded-[15px] bg-surface-card px-1 py-3">
           <Link
             to="/nft/$nftId"

@@ -30,9 +30,6 @@ async function startApp() {
   // Always initialize MSW worker in both Dev and Preview/E2E modes
   await enableMocking();
 
-  // Initialize Socket.IO connection and bind to QueryClient
-  await initSocket(queryClient);
-
   const rootElement = document.getElementById('root');
   if (rootElement && !rootElement.innerHTML) {
     const root = ReactDOM.createRoot(rootElement);
@@ -44,6 +41,9 @@ async function startApp() {
       </React.StrictMode>
     );
   }
+
+  // Initialize Socket.IO connection non-blockingly without delaying First Contentful Paint
+  void initSocket(queryClient);
 }
 
 startApp().catch((err) => {

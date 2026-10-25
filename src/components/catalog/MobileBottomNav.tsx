@@ -64,21 +64,20 @@ export function MobileBottomNav({
     const update = () => {
       const rect = el.getBoundingClientRect();
       if (rect.width > 0) {
-        setDimensions({
-          width: Math.round(rect.width),
-          height: Math.round(rect.height) || 76
-        });
+        const nextW = Math.round(rect.width);
+        const nextH = Math.round(rect.height) || 76;
+        setDimensions((prev) =>
+          prev.width === nextW && prev.height === nextH ? prev : { width: nextW, height: nextH }
+        );
       }
     };
 
     update();
     const ro = new ResizeObserver(update);
     ro.observe(el);
-    window.addEventListener('resize', update);
 
     return () => {
       ro.disconnect();
-      window.removeEventListener('resize', update);
     };
   }, []);
 
