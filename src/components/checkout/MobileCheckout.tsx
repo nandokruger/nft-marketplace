@@ -1,5 +1,6 @@
 import { MoreVertical, Loader2, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ChevronLeftIcon, WalletCardIcon } from '@/components/icons';
 import type { Wallet, Cart } from '@/contracts';
 
 interface MobileCheckoutProps {
@@ -48,10 +49,10 @@ const PROVIDERS: {
   type: 'letter' | 'icon';
   char?: string;
 }[] = [
-  { id: 'WalletConnect', name: 'WalletConnect', type: 'letter', char: 'W' },
-  { id: 'MetaMask', name: 'MetaMask', type: 'letter', char: 'M' },
-  { id: 'Coinbase Wallet', name: 'Coinbase Wallet', type: 'icon' }
-];
+    { id: 'WalletConnect', name: 'WalletConnect', type: 'letter', char: 'W' },
+    { id: 'MetaMask', name: 'MetaMask', type: 'letter', char: 'M' },
+    { id: 'Coinbase Wallet', name: 'Coinbase Wallet', type: 'icon' }
+  ];
 
 export function MobileCheckout({
   wallets,
@@ -80,15 +81,7 @@ export function MobileCheckout({
           aria-label="Voltar"
           className="w-10 h-10 rounded-full bg-[#2F1D15] border border-white/10 flex items-center justify-center text-foreground hover:bg-[#342820] cursor-pointer active:scale-95 transition-all shadow-sm shrink-0"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12.9167 15.8332C12.9167 15.8332 7.08335 12.3798 7.08335 9.99984C7.08335 7.62067 12.9167 4.1665 12.9167 4.1665"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              stroke="#CFB28C"
-            />
-          </svg>
+          <ChevronLeftIcon className="text-[#CFB28C]" />
         </button>
 
         <h1 className="text-base sm:text-lg md:text-xl font-bold text-foreground font-mono tracking-tight text-center flex-1">
@@ -193,11 +186,10 @@ export function MobileCheckout({
                           onSelectWallet(wallet);
                         }
                       }}
-                      className={`w-full bg-[#1A120E] border rounded-2xl p-4 flex items-start justify-between gap-3 shadow-md cursor-pointer transition-all active:scale-[0.99] focus:outline-none focus:ring-1 focus:ring-primary ${
-                        isSelected
+                      className={`w-full bg-[#1A120E] border rounded-2xl p-4 flex items-start justify-between gap-3 shadow-md cursor-pointer transition-all active:scale-[0.99] focus:outline-none focus:ring-1 focus:ring-primary ${isSelected
                           ? 'border-[#C98A4B]/50 ring-1 ring-[#C98A4B]/30'
                           : 'border-[#2D241E] hover:border-white/10'
-                      }`}
+                        }`}
                     >
                       {/* Seletor estilo Radio Button estilizado à esquerda */}
                       <div className="pt-0.5 shrink-0">
@@ -258,9 +250,8 @@ export function MobileCheckout({
                         onSelectProvider(provider.id);
                       }
                     }}
-                    className={`w-full bg-[#1A120E] border rounded-2xl p-3.5 flex items-center justify-between gap-3 shadow-md cursor-pointer transition-all active:scale-[0.99] focus:outline-none focus:ring-1 focus:ring-primary ${
-                      isSelected ? 'border-[#C98A4B]/50 ring-1 ring-[#C98A4B]/20' : 'border-[#2D241E] hover:border-white/10'
-                    }`}
+                    className={`w-full bg-[#1A120E] border rounded-2xl p-3.5 flex items-center justify-between gap-3 shadow-md cursor-pointer transition-all active:scale-[0.99] focus:outline-none focus:ring-1 focus:ring-primary ${isSelected ? 'border-[#C98A4B]/50 ring-1 ring-[#C98A4B]/20' : 'border-[#2D241E] hover:border-white/10'
+                      }`}
                   >
                     {/* Ícone circular do provedor */}
                     <div className="flex items-center gap-3 min-w-0">
@@ -268,42 +259,7 @@ export function MobileCheckout({
                         {provider.type === 'letter' ? (
                           <span>{provider.char}</span>
                         ) : (
-                          <svg
-                            width="21"
-                            height="19"
-                            viewBox="0 0 21 19"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M19.2071 11.7116H15.3204C13.9052 11.7116 12.7576 10.564 12.7576 9.14782C12.7576 7.73258 13.9052 6.58496 15.3204 6.58496H19.1766"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              stroke="#D28A4C"
-                            />
-                            <path
-                              d="M15.7579 9.08898H15.4608"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              stroke="#D28A4C"
-                            />
-                            <path
-                              d="M5.64209 5.1798H9.70209"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              stroke="#D28A4C"
-                            />
-                            <path
-                              d="M0.75 9.28905C0.75 2.88429 3.07476 0.75 10.051 0.75C17.0262 0.75 19.351 2.88429 19.351 9.28905C19.351 15.6929 17.0262 17.8281 10.051 17.8281C3.07476 17.8281 0.75 15.6929 0.75 9.28905Z"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              stroke="#D28A4C"
-                            />
-                          </svg>
+                          <WalletCardIcon width={21} height={19} className="text-[#D28A4C]" />
                         )}
                       </div>
 

@@ -10,6 +10,7 @@ import { useIsDesktop } from '@/lib/use-media-query';
 import { MobileCart } from '@/components/cart/MobileCart';
 import { MobileCartSkeleton } from '@/components/skeletons/MobileCartSkeleton';
 import { resolveAssetUrl } from '@/lib/assets';
+import { EditorialArrowIcon, TrashIcon } from '@/components/icons';
 import type { Cart, Nft, QuoteResponse } from '@/contracts';
 
 export const Route = createFileRoute('/cart')({
@@ -21,31 +22,31 @@ const RELATED_NFTS = [
     id: 'nft-04',
     name: 'Cosmic Bloom #118',
     priceEth: '1.29',
-    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.webp')
+    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.png')
   },
   {
     id: 'nft-05',
     name: 'Violet Nomad #314',
     priceEth: '1.39',
-    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.webp')
+    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.png')
   },
   {
     id: 'nft-06',
     name: 'Ivory Baron #088',
     priceEth: '1.79',
-    imageUrl: resolveAssetUrl('/assets/nfts/neon-vessel.webp')
+    imageUrl: resolveAssetUrl('/assets/nfts/neon-vessel.png')
   },
   {
     id: 'nft-07',
     name: 'Golden Beat #207',
     priceEth: '0.99',
-    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.webp')
+    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.png')
   },
   {
     id: 'nft-09',
     name: 'Golden Signal #160',
     priceEth: '0.39',
-    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.webp')
+    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.png')
   }
 ];
 
@@ -348,7 +349,7 @@ function CartPage() {
           </p>
           <Link to="/" className="mt-2">
             <Button variant="default" size="lg" className="font-bold text-sm bg-primary text-ink hover:bg-[#c27c3e] cursor-pointer">
-              Explorar Catálogo →
+              Explorar Catálogo <EditorialArrowIcon />
             </Button>
           </Link>
         </div>
@@ -456,11 +457,7 @@ function CartPage() {
                         disabled={removeItemMutation.isPending}
                         className="text-text-secondary flex ml-5 text-center hover:text-text-coral transition-colors p-1 cursor-pointer shrink-0"
                       >
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M18.8894 9.55409C18.8894 17.5731 20.0437 21.1979 12.2799 21.1979C4.51515 21.1979 5.69324 17.5731 5.69324 9.55409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#B39463" />
-                          <path d="M20.3653 6.47981H4.21484" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#B39463" />
-                          <path d="M15.7148 6.47981C15.7148 6.47981 16.2434 2.7141 12.2891 2.7141C8.33578 2.7141 8.86435 6.47981 8.86435 6.47981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#B39463" />
-                        </svg>
+                        <TrashIcon width={22} height={22} className="text-[#B39463]" />
                       </button>
                     </div>
                   </div>

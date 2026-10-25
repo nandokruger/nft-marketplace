@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useIsDesktop } from '@/lib/use-media-query';
 import { resolveAssetUrl } from '@/lib/assets';
+import { ChevronDownIcon } from '@/components/icons';
 import {
   CatalogSearchSchema,
   compactSearch,
@@ -130,7 +131,7 @@ function HomePage() {
   const currentSort: CatalogSort = search.sort ?? 'newest';
 
   return (
-    <div className="w-full flex flex-col px-4 lg:px-0 items-center gap-12 sm:gap-16 lg:gap-24 py-4 sm:py-6 lg:px-0 lg:pt-9 max-w-[1200px] mx-auto font-mono pb-28 lg:pb-0">
+    <div className="w-full flex flex-col items-center gap-12 sm:gap-16 lg:gap-24 py-4 sm:py-6 px-4 sm:px-6 lg:px-0 lg:pt-9 max-w-[1200px] mx-auto font-mono pb-28 lg:pb-0">
       {/* Toast Notice */}
       {toastNotice && (
         <div
@@ -190,7 +191,7 @@ function HomePage() {
 
               <div className="w-full h-[368px] rounded-[22px] overflow-hidden mt-3 shadow-lg">
                 <img
-                  src={resolveAssetUrl('/assets/nfts/sage-nomad.webp')}
+                  src={resolveAssetUrl('/assets/nfts/sage-nomad.png')}
                   alt="NFT em destaque - Oferta limitada"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
@@ -265,15 +266,10 @@ function HomePage() {
                     Mais populares
                   </option>
                 </select>
-                <svg
+                <ChevronDownIcon
                   className="w-4 h-4 pointer-events-none absolute right-0 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
                   aria-hidden="true"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                />
               </div>
             </div>
           </div>

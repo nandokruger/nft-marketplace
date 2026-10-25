@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router';
 import { eth } from '@/lib/eth-math';
 import { Button } from '@/components/ui/button';
 import { resolveAssetUrl } from '@/lib/assets';
+import { ChevronLeftIcon, EditorialArrowIcon, TrashIcon } from '@/components/icons';
 import type { Cart } from '@/contracts';
 
 interface MobileCartProps {
@@ -63,10 +64,7 @@ export function MobileCart({
           aria-label="Voltar"
           className="w-10 h-10 rounded-full bg-[#2F1D15] border border-white/10 flex items-center justify-center text-foreground hover:bg-[#342820] cursor-pointer active:scale-95 transition-all shadow-sm shrink-0"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.9167 15.8332C12.9167 15.8332 7.08335 12.3798 7.08335 9.99984C7.08335 7.62067 12.9167 4.1665 12.9167 4.1665" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#CFB28C" />
-          </svg>
-
+          <ChevronLeftIcon className="text-[#CFB28C]" />
         </button>
 
 
@@ -118,7 +116,7 @@ export function MobileCart({
               type="button"
               className="rounded-full px-6 py-2.5 sm:px-8 sm:py-3 bg-[#C98A4B] hover:bg-[#d89656] text-[#140D0A] font-mono font-bold text-xs sm:text-sm cursor-pointer shadow-md"
             >
-              Explorar Catálogo →
+              Explorar Catálogo <EditorialArrowIcon />
             </Button>
           </Link>
         </div>
@@ -243,12 +241,7 @@ export function MobileCart({
                         className="w-[26px] h-[26px] sm:w-[28px] sm:h-[28px] rounded-full bg-transparent text-[#C98A4B] hover:text-text-coral hover:bg-white/5 flex items-center justify-center transition-colors cursor-pointer hover:border-text-coral/50 active:scale-95 shrink-0"
                         title={`Remover ${item.nft.name} do carrinho`}
                       >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M18.8894 9.55409C18.8894 17.5731 20.0437 21.1979 12.2799 21.1979C4.51515 21.1979 5.69324 17.5731 5.69324 9.55409" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#B39463" />
-                          <path d="M20.3653 6.47981H4.21484" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#B39463" />
-                          <path d="M15.7148 6.47981C15.7148 6.47981 16.2434 2.7141 12.2891 2.7141C8.33578 2.7141 8.86435 6.47981 8.86435 6.47981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#B39463" />
-                        </svg>
-
+                        <TrashIcon width={24} height={24} className="text-[#B39463]" />
                       </button>
                     </div>
                   </div>

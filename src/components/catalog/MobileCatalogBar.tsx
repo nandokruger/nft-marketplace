@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FilterSlidersIcon } from '@/components/icons';
 import {
   Sheet,
   SheetClose,
@@ -103,12 +104,7 @@ export function MobileCatalogBar({
             aria-label="Abrir filtros"
             className="relative h-12 w-12 rounded-[12px] bg-gradient-to-b from-[#D28A4C]/45 to-[#D28A4C] hover:brightness-95 text-ink flex items-center justify-center shrink-0 cursor-pointer shadow-sm transition-all"
           >
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10.215 16.3925H4.28186" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#140D0A" />
-              <path d="M13.9379 16.3934C13.9379 18.2651 14.562 18.8884 16.4328 18.8884C18.3037 18.8884 18.9278 18.2651 18.9278 16.3934C18.9278 14.5218 18.3037 13.8984 16.4328 13.8984C14.562 13.8984 13.9379 14.5218 13.9379 16.3934Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#140D0A" />
-              <path d="M12.9952 6.77776H18.9275" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#140D0A" />
-              <path d="M9.27232 6.77671C9.27232 4.90589 8.64817 4.28174 6.77735 4.28174C4.90571 4.28174 4.28156 4.90589 4.28156 6.77671C4.28156 8.64835 4.90571 9.27169 6.77735 9.27169C8.64817 9.27169 9.27232 8.64835 9.27232 6.77671Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#140D0A" />
-            </svg>
+            <FilterSlidersIcon width={22} height={22} className="text-[#140D0A]" />
 
             {activeCount > 0 && (
               <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-[#D28A4C] text-ink font-bold text-[11px] flex items-center justify-center border-2 border-ink">
@@ -138,7 +134,7 @@ export function MobileCatalogBar({
               <Button
                 type="button"
                 variant="outline"
-                size="default"
+                size="sm"
                 onClick={handleClearAll}
                 className="rounded-[6px] border-border text-foreground hover:bg-surface-card"
               >
@@ -149,8 +145,8 @@ export function MobileCatalogBar({
               <Button
                 type="button"
                 variant="default"
-                size="default"
-                className="flex-1  rounded-[6px] bg-primary text-ink font-bold hover:bg-[#c27c3e]"
+                size="sm"
+                className="flex-1 rounded-[6px] bg-primary text-ink font-bold hover:bg-[#c27c3e]"
               >
                 {typeof totalResults === 'number'
                   ? `Ver ${totalResults} resultados`

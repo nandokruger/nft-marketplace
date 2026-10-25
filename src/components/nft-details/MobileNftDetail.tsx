@@ -1,6 +1,7 @@
 import { Heart } from 'lucide-react';
 import { eth } from '@/lib/eth-math';
 import { resolveAssetUrl } from '@/lib/assets';
+import { ChevronLeftIcon, CartItemIcon } from '@/components/icons';
 import type { Nft } from '@/contracts';
 
 interface MobileNftDetailProps {
@@ -56,9 +57,7 @@ export function MobileNftDetail({
           aria-label="Voltar"
           className="w-11 h-11 rounded-full bg-surface-card/80 hover:bg-surface-dark border border-border/40 text-foreground flex items-center justify-center backdrop-blur-md transition-colors cursor-pointer shadow-md"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.9167 15.8332C12.9167 15.8332 7.08335 12.3798 7.08335 9.99984C7.08335 7.62067 12.9167 4.1665 12.9167 4.1665" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#CFB28C" />
-          </svg>
+          <ChevronLeftIcon className="text-[#CFB28C]" />
         </button>
 
         {/* Favorite Button with Optimistic Update */}
@@ -80,21 +79,21 @@ export function MobileNftDetail({
 
       {/* Main NFT Artwork Card (rounded-[2rem], CLS = 0) */}
       <div className="px-4 w-full">
-        <div className="w-full mx-auto max-w-[500px] aspect-square lg:rounded-[2rem] rounded-t-[2rem] overflow-hidden bg-surface-dark shadow-2xl relative border border-border/30">
+        <div className="w-full mx-auto max-w-[500px] aspect-square rounded-[2rem] overflow-hidden bg-surface-dark shadow-2xl relative border border-border/30">
           <img
             src={resolveAssetUrl(nft.imageUrl)}
             alt={nft.name}
             className="w-full h-full object-cover"
             fetchPriority="high"
-            width={350}
-            height={350}
+            width={358}
+            height={358}
           />
         </div>
       </div>
 
       {/* Info & Metadata Card */}
-      <div className=" w-full">
-        <div className="w-full rounded-t-[2rem] pb-18 bg-surface-card border border-border/40 p-5 flex flex-col gap-4 shadow-xl">
+      <div className="mt-4 px-4 w-full">
+        <div className="w-full rounded-[2rem] bg-surface-card border border-border/40 p-5 flex flex-col gap-4 shadow-xl">
           {/* Title & Rating */}
           <div className="flex items-center justify-between gap-2">
             <h1 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight truncate">
@@ -160,7 +159,7 @@ export function MobileNftDetail({
       </div>
 
       {/* Sticky Bottom Action Bar */}
-      <div className="w-full  gap-3 mx-auto fixed bottom-0 left-0 bg-surface-card border-t rounded-t-[2rem] border-border/50 shadow-[0_-12px_32px_rgba(0,0,0,0.85)] px-5 pt-3.5 pb-6">
+      <div className="w-full  gap-3 mx-auto fixed bottom-0 bg-surface-card border-t rounded-t-[2rem] border-border/50 shadow-[0_-12px_32px_rgba(0,0,0,0.85)] px-5 pt-3.5 pb-6">
         <div className=" inset-x-0 z-40 max-w-[690px] mx-auto  flex flex-col gap-3 font-mono">
           {/* Top Line: Stepper + Price */}
           <div className="flex items-center justify-between">
@@ -214,11 +213,7 @@ export function MobileNftDetail({
               aria-label="Adicionar ao carrinho"
               className="w-12 h-12 rounded-full bg-surface-dark border border-border/60 hover:border-primary/40  text-foreground hover:text-primary flex items-center justify-center transition-colors cursor-pointer shrink-0 shadow-lg disabled:opacity-50"
             >
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.3334 6.80118L17.3897 12.7776C17.2182 13.9561 16.2745 14.7136 15.0736 14.7136H6.83828C5.72308 14.7136 4.69367 13.8719 4.5221 12.7776L3.49269 5.79108L3.23533 3.85506C3.14955 3.35001 2.72063 3.01331 2.12014 3.01331H1.51965C1.17651 3.01331 0.833374 2.6766 0.833374 2.3399C0.833374 2.0032 1.17651 1.6665 1.51965 1.6665H2.12014C3.32112 1.6665 4.35053 2.50825 4.43632 3.68671L4.60788 5.03351H16.7893C17.2182 5.03351 17.6471 5.20186 17.9045 5.53856C18.2476 5.87526 18.3334 6.38031 18.3334 6.80118Z" fill="#B39463" />
-                <path d="M15.2451 18.3332C15.7189 18.3332 16.103 17.9563 16.103 17.4914C16.103 17.0265 15.7189 16.6497 15.2451 16.6497C14.7714 16.6497 14.3873 17.0265 14.3873 17.4914C14.3873 17.9563 14.7714 18.3332 15.2451 18.3332Z" fill="#B39463" />
-                <path d="M6.66671 18.3332C7.14048 18.3332 7.52455 17.9563 7.52455 17.4914C7.52455 17.0265 7.14048 16.6497 6.66671 16.6497C6.19293 16.6497 5.80886 17.0265 5.80886 17.4914C5.80886 17.9563 6.19293 18.3332 6.66671 18.3332Z" fill="#B39463" />
-              </svg>
+              <CartItemIcon className="text-[#B39463]" />
 
             </button>
           </div>

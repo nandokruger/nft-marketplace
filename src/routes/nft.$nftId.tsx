@@ -10,6 +10,14 @@ import { useIsDesktop } from '@/lib/use-media-query';
 import { MobileNftDetail } from '@/components/nft-details/MobileNftDetail';
 import { MobileNftDetailSkeleton } from '@/components/skeletons/MobileNftDetailSkeleton';
 import { resolveAssetUrl } from '@/lib/assets';
+import {
+  SearchIcon,
+  StarIcon,
+  HeartIcon,
+  LinkedInShareIcon,
+  MailShareIcon,
+  TwitterXIcon
+} from '@/components/icons';
 import type { Nft } from '@/contracts';
 
 export const Route = createFileRoute('/nft/$nftId')({
@@ -22,31 +30,31 @@ const RELATED_COLLECTION_NFTS = [
     id: 'nft-04',
     name: 'Cosmic Bloom #118',
     priceEth: '1.29',
-    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.webp')
+    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.png')
   },
   {
     id: 'nft-05',
     name: 'Violet Nomad #314',
     priceEth: '1.39',
-    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.webp')
+    imageUrl: resolveAssetUrl('/assets/nfts/sage-nomad.png')
   },
   {
     id: 'nft-06',
     name: 'Ivory Baron #088',
     priceEth: '1.79',
-    imageUrl: resolveAssetUrl('/assets/nfts/neon-vessel.webp')
+    imageUrl: resolveAssetUrl('/assets/nfts/neon-vessel.png')
   },
   {
     id: 'nft-07',
     name: 'Golden Beat #207',
     priceEth: '0.99',
-    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.webp')
+    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.png')
   },
   {
     id: 'nft-09',
     name: 'Golden Signal #160',
     priceEth: '0.39',
-    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.webp')
+    imageUrl: resolveAssetUrl('/assets/nfts/golden-beat.png')
   }
 ];
 
@@ -397,9 +405,7 @@ function NftDetailPage() {
                 onClick={() => setIsZoomOpen(true)}
                 className="absolute top-4 right- sm:top-2 sm:right-5 w-[30px] h-[30px] rounded-full bg-surface-card border border-border flex items-center justify-center text-foreground hover:text-primary hover:border-primary/50 transition-colors cursor-pointer shadow-md"
               >
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.5726 16.0029C10.5755 19.1865 4.988 18.3056 2.02842 14.6542C-0.828088 11.129 -0.64944 6.04347 2.44943 2.82482C5.65137 -0.500594 10.6854 -0.944524 14.3346 1.78337C15.642 2.76051 16.6183 4.00364 17.2542 5.50838C17.8938 7.02186 18.0881 8.59654 17.8663 10.2205C17.6452 11.837 17 13.2775 15.9499 14.6217C16.0349 14.6773 16.1255 14.7173 16.1904 14.7822C17.3448 15.9311 18.4947 17.0843 19.6491 18.2331C19.9227 18.5054 20.0589 18.8225 19.9776 19.2047C19.8165 19.9651 18.9107 20.2586 18.3298 19.7366C18.0575 19.4925 17.807 19.2234 17.5484 18.9649C16.6002 18.0177 15.6526 17.0699 14.7044 16.1227C14.665 16.0853 14.6238 16.0503 14.5726 16.0029ZM15.9605 8.98677C15.9705 5.12689 12.8529 2.00627 8.98261 2.00065C5.12292 1.99503 2.00781 5.09068 1.99094 8.94806C1.97408 12.8173 5.08544 15.9467 8.96762 15.9648C12.8117 15.9829 15.9505 12.8504 15.9605 8.98677Z" fill="#F5F1EB" />
-                </svg>
+                <SearchIcon width={20} height={20} className="text-[#F5F1EB]" />
               </button>
             </div>
           </div>
@@ -420,9 +426,7 @@ function NftDetailPage() {
               <div className="flex items-center gap-1.5 text-xs sm:text-[15px] text-foreground">
                 <div className="flex items-center gap-1 text-primary" aria-label="Avaliação 5 estrelas">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 fill-primary" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                    <StarIcon key={i} className="w-4 h-4 fill-primary" />
                   ))}
                 </div>
                 <span>{likesCount} avaliações de colecionadores</span>
@@ -518,19 +522,10 @@ function NftDetailPage() {
                     }`}
                   aria-label={isFavorited ? 'Favoritado' : 'Favoritar'}
                 >
-                  <svg
+                  <HeartIcon
                     className={`w-6 h-6 ${isFavorited ? 'fill-primary text-primary' : 'text-primary'}`}
-                    fill={isFavorited ? 'currentColor' : 'none'}
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    />
-                  </svg>
+                    isFilled={isFavorited}
+                  />
                   <span>{isFavorited ? 'Favoritado' : 'Favoritar'}</span>
                 </button>
               </div>
@@ -553,9 +548,7 @@ function NftDetailPage() {
                     onClick={() => handleShare('linkedin')}
                     className="hover:text-primary transition-colors cursor-pointer"
                   >
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3.125 1.5625C3.125 2.4375 2.4375 3.125 1.5625 3.125C0.6875 3.125 0 2.4375 0 1.5625C0 0.6875 0.6875 0 1.5625 0C2.4375 0 3.125 0.6875 3.125 1.5625ZM3.125 4.375H0V14.375H3.125V4.375ZM8.125 4.375H5V14.375H8.125V9.125C8.125 6.1875 11.875 5.9375 11.875 9.125V14.375H15V8.0625C15 3.125 9.4375 3.3125 8.125 5.75V4.375Z" fill="#F5F1EB" />
-                    </svg>
+                    <LinkedInShareIcon className="w-4 h-4 fill-current" />
                   </button>
                   <button
                     type="button"
@@ -563,9 +556,7 @@ function NftDetailPage() {
                     onClick={() => handleShare('email')}
                     className="hover:text-primary transition-colors cursor-pointer"
                   >
-                    <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7.5 1.09091C5.80168 1.09091 3.48846 1.2365 2.01951 1.34356C1.53167 1.37911 1.15385 1.76529 1.15385 2.23696V2.76996L7.03304 5.85802C7.32344 6.01056 7.67656 6.01056 7.96697 5.85802L13.8462 2.76996V2.23696C13.8462 1.76529 13.4683 1.37911 12.9805 1.34356C11.5115 1.2365 9.19833 1.09091 7.5 1.09091ZM13.8462 4.01792L8.52732 6.81165C7.88843 7.14723 7.11157 7.14723 6.47268 6.81165L1.15385 4.01792V9.76304C1.15385 10.2347 1.53167 10.6209 2.01951 10.6564C3.48846 10.7635 5.80168 10.9091 7.5 10.9091C9.19833 10.9091 11.5115 10.7635 12.9805 10.6564C13.4683 10.6209 13.8462 10.2347 13.8462 9.76304V4.01792ZM1.93083 0.255877C3.40066 0.148756 5.75301 0 7.5 0C9.24699 0 11.5993 0.148756 13.0692 0.255877C14.1676 0.335933 15 1.20441 15 2.23696V9.76304C15 10.7956 14.1676 11.6641 13.0692 11.7441C11.5993 11.8512 9.247 12 7.5 12C5.75301 12 3.40066 11.8512 1.93083 11.7441C0.832368 11.6641 0 10.7956 0 9.76304V2.23696C0 1.20441 0.832367 0.335933 1.93083 0.255877Z" fill-rule="evenodd" clip-rule="evenodd" fill="#F5F1EB" />
-                    </svg>
+                    <MailShareIcon className="w-4 h-4" />
                   </button>
                   <button
                     type="button"
@@ -573,9 +564,7 @@ function NftDetailPage() {
                     onClick={() => handleShare('twitter')}
                     className="hover:text-primary transition-colors cursor-pointer"
                   >
-                    <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5.02106 12.1908C11.0461 12.1908 14.341 7.50111 14.341 3.4346C14.341 3.30135 14.3381 3.1688 14.3316 3.03675C14.9711 2.60239 15.5271 2.06021 15.9657 1.44331C15.3788 1.6883 14.7472 1.85327 14.0846 1.92765C14.7608 1.54669 15.2802 0.94378 15.5251 0.225197C14.8921 0.577835 14.1912 0.834082 13.4452 0.972271C12.8473 0.374134 11.996 0 11.0541 0C9.24495 0 7.77791 1.37831 7.77791 3.07718C7.77791 3.31876 7.80678 3.55351 7.86271 3.77887C5.14054 3.65041 2.72653 2.42565 1.11113 0.563675C0.829489 1.01833 0.667332 1.54686 0.667332 2.11037C0.667332 3.17801 1.24569 4.12059 2.12511 4.67216C1.5878 4.65663 1.08298 4.51776 0.641546 4.2871C0.64082 4.2999 0.64082 4.31286 0.64082 4.32634C0.64082 5.81691 1.77011 7.06129 3.26875 7.3433C2.99364 7.41376 2.70419 7.45163 2.4053 7.45163C2.1943 7.45163 1.9891 7.43184 1.78954 7.39619C2.20646 8.61873 3.41583 9.5086 4.84964 9.53368C3.72834 10.3592 2.31596 10.8511 0.781368 10.8511C0.517159 10.8511 0.256401 10.8369 0 10.8084C1.44961 11.6812 3.17087 12.1908 5.02106 12.1908Z" fill="#F5F1EB" />
-                    </svg>
+                    <TwitterXIcon className="w-4 h-4 fill-current" />
                   </button>
                 </div>
               </div>
@@ -662,9 +651,7 @@ function NftDetailPage() {
                     <span className="font-bold text-foreground text-sm">{rev.collector}</span>
                     <div className="flex text-primary">
                       {[...Array(rev.rating)].map((_, i) => (
-                        <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
+                        <StarIcon key={i} className="w-3.5 h-3.5 fill-current" />
                       ))}
                     </div>
                   </div>

@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { resolveAssetUrl } from '@/lib/assets';
+import { HeroBackgroundGraphic } from '@/components/icons';
 
 interface HeroSlide {
   src: string;
@@ -10,9 +11,9 @@ interface HeroSlide {
 }
 
 const HERO_SLIDES: HeroSlide[] = [
-  { src: resolveAssetUrl('/assets/nfts/emerald-ape.webp'), alt: 'Emerald Ape #042 — arte em destaque' },
-  { src: resolveAssetUrl('/assets/nfts/sage-nomad.webp'), alt: 'Sage Nomad #009 — arte em destaque' },
-  { src: resolveAssetUrl('/assets/nfts/neon-vessel.webp'), alt: 'Neon Vessel #552 — arte em destaque' }
+  { src: resolveAssetUrl('/assets/nfts/emerald-ape.png'), alt: 'Emerald Ape #042 — arte em destaque' },
+  { src: resolveAssetUrl('/assets/nfts/sage-nomad.png'), alt: 'Sage Nomad #009 — arte em destaque' },
+  { src: resolveAssetUrl('/assets/nfts/neon-vessel.png'), alt: 'Neon Vessel #552 — arte em destaque' }
 ];
 
 function HeroDots({
@@ -87,68 +88,7 @@ export function HomeHero({ variant }: { variant: 'desktop' | 'mobile' }) {
         className="relative overflow-hidden rounded-[30px] bg-surface-dark/70 p-5 pb-9 w-full"
       >
         {/* Background */}
-        <svg
-          width="366"
-          height="190"
-          viewBox="0 0 366 190"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full"
-        >
-          <rect width="366" height="190" rx="30" fill="url(#paint0_linear_14_5290)" />
-          <mask
-            id="mask0_14_5290"
-            style={{ maskType: 'alpha' }}
-            maskUnits="userSpaceOnUse"
-            x="0"
-            y="0"
-            width="366"
-            height="190"
-          >
-            <rect width="366" height="190" rx="30" fill="#EDEDED" />
-          </mask>
-          <g mask="url(#mask0_14_5290)">
-            <circle cx="44" cy="93" r="124" fill="url(#paint1_linear_14_5290)" />
-            <circle cx="197" cy="114" r="124" fill="url(#paint2_linear_14_5290)" />
-          </g>
-          <defs>
-            <linearGradient
-              id="paint0_linear_14_5290"
-              x1="5"
-              y1="-5.5613e-06"
-              x2="366"
-              y2="183"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#D28A4C" stopOpacity="0.2" />
-              <stop offset="1" stopColor="#D28A4C" stopOpacity="0.1" />
-            </linearGradient>
-            <linearGradient
-              id="paint1_linear_14_5290"
-              x1="69"
-              y1="-9.99999"
-              x2="139"
-              y2="185"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#DD9A5F" stopOpacity="0.43" />
-              <stop offset="1" stopColor="#D28A4C" stopOpacity="0.04" />
-            </linearGradient>
-            <linearGradient
-              id="paint2_linear_14_5290"
-              x1="222"
-              y1="11"
-              x2="292"
-              y2="206"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#DD9A5F" stopOpacity="0.37" />
-              <stop offset="1" stopColor="#D28A4C" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
+        <HeroBackgroundGraphic />
 
         <div className="relative flex items-start justify-between gap-3">
           <div className="flex min-w-0 flex-1 flex-col gap-2">
