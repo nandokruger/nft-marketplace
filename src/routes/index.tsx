@@ -131,7 +131,7 @@ function HomePage() {
   const currentSort: CatalogSort = search.sort ?? 'newest';
 
   return (
-    <div className="w-full flex flex-col items-center gap-12 sm:gap-16 lg:gap-24 py-4 sm:py-6 px-4 sm:px-6 lg:px-0 lg:pt-9 max-w-[1200px] mx-auto font-mono pb-28 lg:pb-0">
+    <div className="w-full flex flex-col items-center gap-6 sm:gap-16 lg:gap-24 py-4 sm:py-6 px-4 sm:px-6 lg:px-0 lg:pt-9 max-w-[1200px] mx-auto font-mono pb-28 lg:pb-0">
       {/* Toast Notice */}
       {toastNotice && (
         <div
